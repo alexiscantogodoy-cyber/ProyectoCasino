@@ -12,7 +12,7 @@ if (mysqli_num_rows($resultado) > 0) {
     $usuario = mysqli_fetch_assoc($resultado);
     
     // Verificamos la contraseña (asumiendo que está encriptada)
-    if (password_verify($password, $usuario['password'])) {
+if ($password == $usuario['password']) {
         $_SESSION['id_usuario'] = $usuario['id'];
         $_SESSION['nombre'] = $usuario['nombre'];
         $_SESSION['rol'] = $usuario['rol'];
